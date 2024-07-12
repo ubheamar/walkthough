@@ -1,0 +1,13 @@
+{
+  "name": "ui5.walkthrough",
+  "version": "1.0.0",
+  "description": "This is UI5 demo ",
+  "scripts": {
+     "start": "ui5 serve -o index.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+   "@ui5/cli": "^3.10.3"
+  }
+}
