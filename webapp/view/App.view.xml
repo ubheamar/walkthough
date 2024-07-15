@@ -3,7 +3,7 @@
    xmlns:mvc="sap.ui.core.mvc" 
    controllerName="ui5.walkthrough.controller.App">
    <Button
-      text="Say Hello"
+      text="{i18n>showHelloButtonText}"
       press=".onShowHello"/>
       <Input
       value="{abcModel>/recipient/name}"
