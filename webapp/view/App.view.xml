@@ -6,9 +6,10 @@
       text="{i18n>showHelloButtonText}"
       press=".onShowHello"/>
       <Input
-      value="{abcModel>/recipient/name}"
+      busy="{mainModel>/busy}"
+      value="{mainModel>/recipient/name}"
       liveChange="onLiveChange"
-      description="Hello {abcModel>/recipient/name}"
+      description="Hello {mainModel>/recipient/name}"
       valueLiveUpdate="true"
       width="60%"/>
 </mvc:View>

@@ -11,18 +11,17 @@ sap.ui.define([
            // set data model on view
 
          const oDummyData = {
+            busy : false,
             recipient : {
                name : "World"
             },
          };
-         var oModel = new JSONModel(oDummyData);
-         this.getView().setModel(oModel,"abcModel");
-         var oResourceModel = new ResourceModel({
-             bundleName: "ui5.walkthrough.i18n.i18n",
-             supportedLocales: ["de", "fr","en"],
-             fallbackLocale: "en"
-         });
-         this.getView().setModel(oResourceModel,"i18n");
+         var oModel = this.getOwnerComponent().getModel("mainModel");
+         oModel.setData(oDummyData)
+         //var oModel = new JSONModel(oDummyData);
+
+        // this.getView().setModel(oModel,"abcModel");
+         
        },
        onLiveChange : function(oEvent){
           
@@ -31,7 +30,8 @@ sap.ui.define([
           //Step 1: Get View
           var oView = this.getView();
           //Step 2: Get The JSON Model from attached View
-          var oJsonModel = oView.getModel("abcModel");
+          var oJsonModel = oView.getModel("mainModel");
+          oJsonModel.setProperty("/busy",true)
           //Step 3: We have read JSON Model property
           var sName = oJsonModel.getProperty("/recipient/name")
           var oResourceModel = this.getView().getModel("i18n");
