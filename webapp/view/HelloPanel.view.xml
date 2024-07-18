@@ -1,0 +1,52 @@
+<mvc:View
+    controllerName="ui5.walkthrough.controller.HelloPanel"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+     xmlns:core="sap.ui.core"
+>
+    <Panel
+        class="sapUiResponsiveMargin"
+        width="auto"
+    >
+        <headerToolbar>
+            <Toolbar>
+                <ToolbarSpacer />
+                <Button
+                    text="Create"
+                    type="Emphasized"
+                />
+            </Toolbar>
+        </headerToolbar>
+        <content>
+            <Button
+                id="helloDialogButton"
+                icon="sap-icon://sap-ui5"
+                text="{i18n>openDialogButtonText}"
+                press=".onOpenDialog"
+                class="sapUiSmallMarginEnd"
+            />
+            <Button
+                text="{i18n>showHelloButtonText}"
+                press=".onShowHello"
+                class="sapUiSmallMarginEnd"
+            />
+            <Label
+                text="This is label"
+                class="sapUiSmallMarginEnd"
+            />
+            <Input
+                busy="{mainModel>/busy}"
+                value="{mainModel>/recipient/name}"
+                liveChange="onLiveChange"
+                description="Hello {mainModel>/recipient/name}"
+                valueLiveUpdate="true"
+                width="60%"
+            />
+              <core:Icon
+                src="sap-icon://hello-world"
+                size="8rem"
+                class="sapUiMediumMargin"
+            />
+        </content>
+    </Panel>
+</mvc:View>
